@@ -55,7 +55,9 @@ export default function Dropdown({ options, selected, onSelectedChange }) {
           </div>
         </div>
       </div>
-      {/* <div style={`{color: ${selected.color};}`}>Some coolio text-o!</div> */}
+      <div style={{ color: selected.color }}>
+        This text be {selected.color}!
+      </div>
     </div>
   );
 }
