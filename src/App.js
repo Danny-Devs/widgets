@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Search from './components/Search';
 import Accordion from './components/Accordion';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 
 const items = [
   {
@@ -19,29 +20,27 @@ const items = [
 ];
 
 const options = [
-  { label: 'The Color Red', color: 'red' },
-  { label: 'The Color Green', color: 'green' },
-  { label: 'A Shade of Blue', color: 'blue' },
+  { label: 'The Color Red', value: 'red' },
+  { label: 'The Color Green', value: 'green' },
+  { label: 'A Shade of Blue', value: 'blue' },
 ];
 
 const App = () => {
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
+  // const [selected, setSelected] = useState(options[0]);
 
   return (
     <div>
       {/* <Accordion items={items} /> */}
       {/* <Search /> */}
-      <button onClick={() => setShowDropdown(!showDropdown)}>
-        Toggle Dropdown
-      </button>
-      {showDropdown && (
-        <Dropdown
-          options={options}
-          selected={selected}
-          onSelectedChange={setSelected}
-        />
-      )}
+
+      {/* <Dropdown
+        label="colors"
+        options={options}
+        selected={selected}
+        onSelectedChange={setSelected}
+      /> */}
+
+      <Translate />
     </div>
   );
 };
