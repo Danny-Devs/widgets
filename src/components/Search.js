@@ -37,11 +37,6 @@ export default function Search() {
     setTerm(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submit button was clicked.');
-  };
-
   const renderedResults = results.map((result) => {
     return (
       <div className="item" key={result.pageid}>
@@ -63,7 +58,7 @@ export default function Search() {
 
   return (
     <div>
-      <form className="ui form" onSubmit={handleSubmit}>
+      <form className="ui form">
         <div className="field">
           <label>Search Wikipedia</label>
           <div className="ui input">
@@ -75,9 +70,6 @@ export default function Search() {
             />
           </div>
         </div>
-        <button className="ui button" type="submit">
-          Submit
-        </button>
       </form>
       <div className="ui celled list">{renderedResults}</div>
     </div>
